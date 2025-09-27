@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Past Season - Erronix 2K25</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
+body, html { font-family:'Open Sans', sans-serif; background:black; color:white; overflow-x:hidden; }
+
+/* Intro video fullscreen */
+#introContainer {
+  position:fixed; top:0; left:0; width:100%; height:100%; z-index:10;
+  display:flex; align-items:center; justify-content:center; background:black;
+}
+#introVideo {
+  width:100%;
+  height:100%;
+  object-fit:cover; /* cover full screen */
+}
+#introOverlay {
+  position:absolute; top:10%; left:50%; transform:translateX(-50%);
+  font-size:3rem; font-weight:bold; color:#ffb347;
+  text-shadow:2px 2px 8px black;
+  text-align:center;
+  padding:0 10px;
+}
+
+/* Main page content */
+#mainPage { display:none; opacity:0; transition:opacity 1s ease; padding:60px 20px; }
+#mainPage.show { display:block; opacity:1; }
+
+section { max-width:900px; margin:0 auto; text-align:center; padding:20px; }
+h1 { font-family:'Roboto Slab', serif; font-size:2.5rem; color:#ffb347; margin-bottom:20px; }
+h2 { font-family:'Roboto Slab', serif; font-size:1.6rem; color:#ddd; margin-bottom:20px; }
+p { font-size:1.1rem; line-height:1.8; color:#ccc; margin-bottom:30px; text-align:justify; }
+
+video { border-radius:15px; max-width:100%; margin-top:20px; }
+footer { text-align:center; color:gray; padding:20px; margin-top:40px; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  #introOverlay { font-size:2.5rem; top:12%; }
+}
+@media (max-width: 768px) {
+  #introVideo { object-fit:contain; background:black; } /* prevent cropping on small screens */
+  #introOverlay { font-size:2rem; top:10%; }
+  section { padding:15px; }
+  h1 { font-size:2rem; }
+  h2 { font-size:1.4rem; }
+  p { font-size:1rem; }
+}
+@media (max-width: 480px) {
+  #introOverlay { font-size:1.5rem; top:8%; }
+  h1 { font-size:1.6rem; }
+  h2 { font-size:1.2rem; }
+  p { font-size:0.95rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Intro video container -->
+<div id="introContainer">
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="assets/past season.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div id="introOverlay">Past Season</div>
+</div>
+
+<!-- Main page content -->
+<div id="mainPage">
+  <section>
+    <h1>Ananta Bodha 2k24</h1>
+    <h2>Past Season Highlights</h2>
+    <p>Ananta Bodha was a spectacular event filled with exciting technical and non-technical competitions, workshops, and interactive sessions. Participants showcased their creativity, problem-solving skills, and teamwork. Relive the moments of innovation, learning, and fun from this past season.</p>
+
+    <video controls>
+      <source src="assets/past season.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </section>
+
+  <footer>&copy; 2025 Erronix 2K25 | All rights reserved</footer>
+</div>
+
+<script>
+const introContainer = document.getElementById('introContainer');
+const introVideo = document.getElementById('introVideo');
+const mainPage = document.getElementById('mainPage');
+
+// Function to show main page after intro
+function showMainPage() {
+    introContainer.style.transition = 'opacity 1s';
+    introContainer.style.opacity = 0;
+    setTimeout(() => {
+        introContainer.style.display = 'none';
+        mainPage.classList.add('show');
+        document.body.style.overflowY = 'auto';
+    }, 1000); // fade out time
+}
+
+// Auto hide after 20 seconds if video is longer
+setTimeout(showMainPage, 20000);
+
+// Also hide when video ends
+introVideo.addEventListener('ended', showMainPage);
+
+// Play video on mobile if autoplay blocked
+introVideo.play().catch(() => {
+    document.body.addEventListener('click', () => introVideo.play());
+});
+</script>
+
+</body>
+</html>
