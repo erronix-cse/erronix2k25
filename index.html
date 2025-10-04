@@ -156,6 +156,7 @@ nav ul li a:hover::after { width: 100%; }
   height: auto;
   display: block;
   margin: 0 auto;     /* center align */
+  margin-top: 130px;
 }
 
 .hero {
@@ -956,14 +957,17 @@ input:checked + label .description {
 
 
 
-    <section id="home" class="hero">
+<section id="home" class="hero">
   <div class="hero-content">
-  <h1 class="hero-logo">
-  <img src="assets/symponame.png" alt="Erronix 2k25 Logo">
-</h1>
 
+    <!-- Logo -->
+    <h1 class="hero-logo">
+      <img src="assets/symponame.png" alt="Erronix 2k25 Logo">
+    </h1>
+
+    <!-- Subtitle -->
     <h2>National Level Computer Science & Engineering Symposium</h2>
-    
+
     <!-- Buttons row -->
     <div class="hero-buttons">
       <button id="registerBtn" class="btn-main" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSeVVcMIacGliQJLwqJHbGX9MfFLpU1Rz8WBMtshO1jCIdKPGQ/viewform'">
@@ -974,9 +978,33 @@ input:checked + label .description {
         View Past Season
       </button>
     </div>
+    <h1 style="margin: 0 0 20px 0; font-size: 2rem; font-weight: bold; color: #ff8c42;">
+        Join Us On
+    </h1>
+
+    <!-- Date Image (after buttons) -->
+    <div id="dateSection" style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      margin: 0;
+    ">
+      <img src="assets/Symposium_date.png" alt="Symposium Date" style="
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        display: block;
+        background-color: transparent;
+        margin: 0;
+        margin-top: -80px;
+      ">
+    </div>
 
   </div>
 </section>
+
+
 
     
 
@@ -1504,8 +1532,6 @@ if (bg) {
 </script>
 </body>
 </html>
-
-
 
 
 
