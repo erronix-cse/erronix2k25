@@ -156,7 +156,7 @@ nav ul li a:hover::after { width: 100%; }
   height: auto;
   display: block;
   margin: 0 auto;     /* center align */
-  margin-top: 130px;
+  margin-top: 20px;
 }
 
 .hero {
@@ -948,30 +948,31 @@ input:checked + label .description {
 </div>
 
 <!-- Modal Popup for Brochure -->
-<div id="brochure-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" id="close-brochure">&times;</span>
-    <img src="assets/brochure.png" alt="Event Brochure" class="brochure-img">
-  </div>
-</div>
-
-
-
-<section id="home" class="hero">
+<section id="home" class="hero" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 20px; background: black; color: white;">
+  
+  <!-- Hero Content -->
   <div class="hero-content">
 
-    <!-- Logo -->
-    <h1 class="hero-logo">
-      <img src="assets/symponame.png" alt="Erronix 2k25 Logo">
-    </h1>
+    <!-- Subtitle / Intro Text -->
+    <h2 style="color: #ff8c42; font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 600; text-shadow: 0 0 10px #ff8c42;  margin-top:40px">
+      Department of Computer Science and Engineering
+    </h2>
 
-    <!-- Subtitle -->
-<h2 style="color: #ff8c42; font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 600; text-shadow: 0 0 10px #ff8c42;">
-  National Level Technical Symposium<br>
-  Computer Science Department
-</h2>
+    <h2 style="color: #ffd369; font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 600; text-shadow: 0 0 10px #ff8c42; ">
+      Proudly Presents
+    </h2>
+     <!-- Logo -->
+    <div class="hero-logo" >
+      <img src="assets/symponame.png" alt="Erronix 2k25 Logo" >
+    </div>
 
+    <h3 style="color: #ffd369; font-family: 'Roboto Slab', serif; font-size: 1.8rem; font-weight: 500; margin-bottom: 40px;">
+      A National Level Technical Symposium
+    </h3>
 
+   
+
+  </div>
 
     <!-- Buttons row -->
     <div class="hero-buttons">
